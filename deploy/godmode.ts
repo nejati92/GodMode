@@ -8,8 +8,8 @@ export class GodMode extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const table = new dynamodb.Table(this, 'token', {
-      tableName: 'tokens',
+    const table = new dynamodb.Table(this, 'classifier', {
+      tableName: 'classifier',
       partitionKey: { name: 'PK', type: dynamodb.AttributeType.STRING },
       sortKey: { name: 'SK', type: dynamodb.AttributeType.STRING },
     });

@@ -1,5 +1,5 @@
 import { AlchemyProvider, Contract, formatUnits, formatEther } from 'ethers';
-import { erc20Abi, erc1155Abi } from './abis';
+import { erc20Abi, erc721Abi } from './abis';
 import { Injectable } from '@nestjs/common';
 const networkMap = {
   ['Ethereum Mainnet']: 'mainnet',
@@ -17,8 +17,7 @@ const apiKeyMap = {
 
 const abisMap = {
   ['ERC-20']: erc20Abi,
-  ['ERC-721']: erc20Abi,
-  ['ERC-1155']: erc1155Abi,
+  ['ERC-721']: erc721Abi
 };
 @Injectable()
 export class EthProvider {
@@ -50,8 +49,11 @@ export class EthProvider {
       console.log("The token's contract name is " + contractName);
       const balance = await contract.balanceOf(address);
       console.log(balance);
-      if (balance) {
+      if (balance && tokenType === "ERC-20") {
         balanceFormatted = formatUnits(balance, 18);
+      }
+      else if (balance && tokenType === 'ERC-721') {
+        balanceFormatted = formatUnits(balance, 0);
       }
     }
     console.log(balanceFormatted);

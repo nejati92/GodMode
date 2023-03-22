@@ -1,10 +1,10 @@
 ## How it works
 - I have used a serverless architecture and nest js to build this application. I have also used CDK (Infra As a Code) to reliably deploy the application to AWS.
-- The application consist of an ApiGateway, Lambda which is using the nestjs and dynamodb to store the classification rules and a blockchain provider to support the Ethereum Mainnet, Goerli, Polygon Mainnet and Polygon Mumbai. Other evm based systems are not currently supported.
+- The application consist of an ApiGateway, Lambda which is using the nest.js and dynamodb to store the classification rules and a blockchain provider to support the Ethereum Mainnet, Goerli, Polygon Mainnet and Polygon Mumbai. Other evm based systems are not currently supported.
 - Below is an architecture diagram of the project:
 ![image](./architecture.jpeg)
 
-- The api gateway proxies the request to the nestjs app that is hosted in the AWS lambda.
+- The api gateway proxies the request to the nest.js app that is hosted in the AWS lambda.
 - Currently only /isGodMode path is available
 - This takes in a network and address as query parameters which is then validated.
 - It then makes a call to get all the token classification rules based on the network and lastly, it makes a call to the blockchain to retrieve the token balance.
@@ -38,7 +38,7 @@
 - Using CDK allows you easily and quickly deploy your application with a single command.
 
 ### How to setup the Classification
-- The classification rules are currently stored in dyanmoDB.
+- The classification rules are currently stored in dynamoDB.
 - The are manually added to dynamoDB
 - Below is the example:
 ```

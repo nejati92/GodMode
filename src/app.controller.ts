@@ -7,8 +7,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('/isGodMode')
-  async getGodMode(@Query() query: GodModeRequestDto): Promise<any> {
+  async isGodMode(@Query() query: GodModeRequestDto): Promise<any> {
     console.log({ query });
-    return this.appService.getGodMode(query.address, query.network);
+    return this.appService.isGodMode(query.address, query.network);
   }
 }

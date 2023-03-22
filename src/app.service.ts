@@ -12,14 +12,14 @@ interface GodModeResponse {
 @Injectable()
 export class AppService {
   constructor(private tokensDb: TokensDb, private ethProvider: EthProvider) {}
-  async getGodMode(
+  async isGodMode(
     walletAddress: string,
     network: string,
   ): Promise<GodModeResponse[]> {
     const response = await this.tokensDb.getTokens(network);
     const results = await Promise.all(
       response.map((item) => {
-        return this.isGodMode(
+        return this.checkIGodMode(
           item.address,
           walletAddress,
           item.threshold,
@@ -32,7 +32,7 @@ export class AppService {
     return results.filter(Boolean);
   }
 
-  async isGodMode(
+  async checkIGodMode(
     tokenContractAddress: string,
     walletAddress: string,
     threshold: number,

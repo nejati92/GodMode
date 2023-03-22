@@ -12,7 +12,7 @@ interface GodModeResponse {
 @Injectable()
 export class AppService {
   constructor(private tokensDb: TokensDb, private ethProvider: EthProvider) {}
-  async getHello(
+  async getGodMode(
     walletAddress: string,
     network: string,
   ): Promise<GodModeResponse[]> {

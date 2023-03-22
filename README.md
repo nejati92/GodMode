@@ -147,13 +147,12 @@ The rules currently stored are:
   {
     "Network": "Ethereum Mainnet",
     "ContractAddress": "0xc944E90C64B2c07662A292be6244BDf05Cda44a7", //Graph Token (GRT)
-
     "Threshold": "1000",
     "TokenType": "ERC-20"
   },
 
   {
-    "PK": "Ethereum Mainnet",
+    "Network": "Ethereum Mainnet",
     "ContractAddress": "0x", // No contract address
     "Threshold": "1",
     "TokenType": "ETH"

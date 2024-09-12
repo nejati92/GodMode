@@ -60,14 +60,6 @@
 
 ```
 
-### Things still need doing:
-- This projected was created only spending couple of hours and there is a quite lot to do before productionisation of the app which are:
-  - Unit Test
-  - Integration Test
-  - Build CRUD endpoints for the classification rules
-  - Use AWS Secrets Manager to store the API keys
-  - The service has api key, in the spec it did say not to have any authentication, so this should be removed.(I added as I am hosting this app)
-  - Will need to extend to other token types from ERC20 and ERC721.
 
 
 ## How to Setup
